@@ -1,134 +1,44 @@
-import { StatusBar } from 'expo-status-bar';
-import { Button, SafeAreaView, StyleSheet, Switch, Text, TouchableOpacity, View, Image } from 'react-native';
+import { StatusBar } from 'expo-status-bar'; /* A linha importa o componente StatusBar da biblioteca expo-status-bar. O StatusBar é usado para controlar a barra de status no topo da tela do dispositivo */
+import { StyleSheet, Text, View, } from 'react-native'; /* Importa componentes do react-native que serão utilizados no projeto */
+import Header from './components/Header/Header'; /* Importa um componente personalizado chamado Header de um arquivo localizado em ./components/Header/Header.  */
+import Footer from './components/Footer/Footer'; /* Importa o componente Footer, que provavelmente é responsável por exibir o rodapé da tela. em ./components/Footer/Footer. */
+import Button from './components/Button/Button'; /* Importa um componente de botão personalizado em ./components/Button/Button. */
+import Post from './components/Post/Post'; /* Importa um componente Post, que pode ser responsável por exibir posts (ou qualquer conteúdo específico) na interface do aplicativo em ./components/Post/Post. */
+
 
 export default function App() {
   //<></> = fragment
   return (
+    
+    /* View: O componente básico de layout em React Native. Ele é semelhante a um <div> no HTML. */
+    /*  O comportamento de layout da View é baseado no sistema de flexbox, que ajuda a distribuir os elementos de forma flexível e responsiva. */
+    /* flexDirection: Define a direção dos elementos dentro da View. row: Os elementos serão dispostos horizontalmente (lado a lado). column (padrão): Os elementos serão dispostos verticalmente (um abaixo do outro) */
     <View style={styles.container}>
-      <StatusBar style="auto" />
-      <View style={styles.header}>
-        <Text style={styles.headerText}>Só Viagens</Text>
-      </View>
+     {/* controle da barra de status do dispositivo (a parte superior da tela que normalmente exibe a hora, bateria, rede, etc.). */}
+      <StatusBar style="auto" />  {/* significa que o estilo da barra de status será automaticamente ajustado de acordo com o fundo da tela */}
+    
 
-      <View style={styles.post}>
-        <Text style={styles.headerPost}>Rio de Janeiro</Text>
-        
-          <Image style={styles.img}
-            source={require('./assets/image/rio-de-janeiro.jpg')}
-            resizeMode='cover'
-          />
-        <Text style={styles.textPost}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut temporibus aliquid delectus nostrum adipisci est nulla nemo quaerat. Rerum magnam aut harum aliquam velit tempore perspiciatis voluptatibus animi. Eligendi, est?
-        </Text>
+      <Header />
 
-        {/*  <Button title="Saiba mais" color= ""></Button>   */}
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText} >Saiba mais</Text>
-        </TouchableOpacity>
-      </View>
+      <Button />
+      
+      <Post />
 
-      <View style={styles.post}>
-        <Text style={styles.headerPost}>São Paulo</Text>
-     
-          <Image style={styles.img}
-            source={require('./assets/image/Sp.jpg')}
-            resizeMode='cover' 
-          />       
-        <Text style={styles.textPost}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut temporibus aliquid delectus nostrum adipisci est nulla nemo quaerat. Rerum magnam aut harum aliquam velit tempore perspiciatis voluptatibus animi. Eligendi, est?</Text>
-        
-        {/* <Button title="Saiba mais"></Button> */}
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Saiba mais</Text>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.footer}>
-        <Text style={styles.footerText}>  copyright © 2025  Desenvolvido por Samantha </Text>
-      </View>
+      <Footer />
     </View>
   );
 }
 
+/* criando uma variável styles  */
+/* StyleSheet.create() cria os estilos  */
+ /* permitem definir um conjunto fixo de estilos que não serão modificados */
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    /* flex: 1: O componente ocupa uma parte igual do espaço disponível. */
+    flex: 1, /*  A View principal ocupa toda a tela */
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
-
-
-  header: {
-    width: '100%',
-    flex: 1,
-    backgroundColor: '#FF0000',
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingTop: 22
-
-  },
-
-  headerText: {
-    color: '#fff',
-    fontSize: 30,
-    fontWeight: 'bold'
-  },
-
-  post: {
-    flex: 3
-  },
-
-  headerPost: {
-    color: '#000',
-    backgroundColor: '#c1c1c1',
-    fontSize: 20,
-    textAlign: 'center',
-    paddingVertical: 1,
-    fontWeight: 'bold'
-  },
-
-  textPost: {    
-    fontSize: 14,
-    margin: 12
-    
-  },
-
-  button: {
-    padding: 6,
-    width: 120,
-    backgroundColor: "#9c0101",
-    borderRadius: 8,
-    alignSelf: 'center',
-    margin: 12
-  },
-
-  buttonText: {
-    color: '#fff',
-    textAlign: 'center',
-    fontWeight: 'bold'
-  },
-
- 
-  img: {
-    borderColor: '#c1c1c1', 
-    width: 'auto',
-    height: 120,
-   /*  marginTop: 10,   */
-    /* borderRadius: 8, */
-  },
-
-
-  footer: {
-    width: '100%',
-    backgroundColor: '#FF0000',
-    flex: 0.25,
-    justifyContent: 'center',
-
-
-  },
-
-  footerText: {
-    color: '#fff',
-    textAlign: 'center',
-    fontSize: 15,
-  }
 
 });
