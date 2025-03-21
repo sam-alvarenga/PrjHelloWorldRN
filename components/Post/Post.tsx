@@ -1,4 +1,5 @@
 import { Text, View, StyleSheet, Image } from "react-native";
+import Button from '../Button/Button'; /* Importa um componente de botão personalizado em ./components/Button/Button. */
 
 export default function Post() {
     return (
@@ -14,13 +15,7 @@ export default function Post() {
             />
             <Text style={styles.textPost}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut temporibus aliquid delectus nostrum adipisci est nulla nemo quaerat. Rerum magnam aut harum aliquam velit tempore perspiciatis voluptatibus animi. Eligendi, est?
             </Text>
-
-            <Image style={styles.img}
-                source={require('./../../assets/image/rio-de-janeiro.jpg')}
-                resizeMode='cover'
-            />
-            <Text style={styles.textPost}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut temporibus aliquid delectus nostrum adipisci est nulla nemo quaerat. Rerum magnam aut harum aliquam velit tempore perspiciatis voluptatibus animi. Eligendi, est?
-            </Text>
+            <Button/>
 
         </View>
 

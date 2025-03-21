@@ -1,16 +1,12 @@
-import { Button, StyleSheet, Text, TouchableOpacity, View, } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity} from 'react-native';
 
 export default function Button() {
     return (
-        {/*  <Button title="Saiba mais" color= ""></Button>   */ }
-        < TouchableOpacity style = { styles.button } >
-            <Text style={styles.buttonText} >Saiba mais</Text>
+   
+        <TouchableOpacity style = { styles.button } >
+            <Text style={styles.buttonText}>Saiba Mais</Text>
         </TouchableOpacity >
-
-    )
-
-
-
+    );
 }
 
 const styles = StyleSheet.create({
@@ -27,5 +23,5 @@ const styles = StyleSheet.create({
         color: '#fff',
         textAlign: 'center',
         fontWeight: 'bold'
-    },
+    }
 });
