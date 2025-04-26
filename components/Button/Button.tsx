@@ -1,10 +1,14 @@
-import { StyleSheet, Text, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
-export default function Button() {
+
+type Props = {
+    text: string
+}
+
+export default function Button(props: Props) {
     return (
-   
-        <TouchableOpacity style = { styles.button } >
-            <Text style={styles.buttonText}>Saiba Mais</Text>
+        <TouchableOpacity style={styles.button} >
+            <Text style={styles.buttonText}>{props.text}</Text>
         </TouchableOpacity >
     );
 }

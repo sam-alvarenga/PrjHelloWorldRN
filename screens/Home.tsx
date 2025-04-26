@@ -3,6 +3,8 @@ import { StyleSheet, View } from 'react-native'; /* Importa componentes do react
 import Header from '../components/Header/Header'; /* Importa um componente personalizado chamado Header de um arquivo localizado em ./components/Header/Header.  */
 import Footer from '../components/Footer/Footer'; /* Importa o componente Footer, que provavelmente é responsável por exibir o rodapé da tela. em ./components/Footer/Footer. */
 import Post from '../components/Post/Post'; /* Importa um componente Post, que pode ser responsável por exibir posts (ou qualquer conteúdo específico) na interface do aplicativo em ./components/Post/Post. */
+import Rj from '../assets/image/rio-de-janeiro.jpg';
+import Sp from '../assets/image/Sp.jpg';
 
 
 
@@ -20,13 +22,26 @@ export default function App() {
             {/* controle da barra de status do dispositivo (a parte superior da tela que normalmente exibe a hora, bateria, rede, etc.). */}
             <StatusBar style="auto" />  {/* significa que o estilo da barra de status será automaticamente ajustado de acordo com o fundo da tela */}
             <Header />
-            <Post />
-            <Post />
+            <Post titulo="Rio de Janeiro"
+                descricao="O Rio de Janeiro continua lindo"
+                imagem={Rj}
+                textButton= "Saiba mais"
+            />
+
+
+            <Post titulo="São paulo"
+                descricao="Não existe amor em Sp"
+                imagem={Sp}
+                textButton= "Saiba mais"
+            />
+
+
             <Footer />
         </View>
 
     );
 }
+
 
 
 
