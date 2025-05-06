@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+
 
 
 type Props = {
@@ -6,9 +8,18 @@ type Props = {
 }
 
 export default function Button(props: Props) {
+    const [button, setLido] = useState(props.text);
+
+    function buttonRead() {
+        if (props.text == "Saiba mais") {
+            setLido("Lido")
+        }
+       
+    }
+
     return (
-        <TouchableOpacity style={styles.button} >
-            <Text style={styles.buttonText}>{props.text}</Text>
+        <TouchableOpacity onPress={buttonRead} style={styles.button} >
+            <Text style={styles.buttonText}>{button}</Text>
         </TouchableOpacity >
     );
 }
