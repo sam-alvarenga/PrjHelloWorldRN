@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, Alert } from 'react-native';
 
 
 
 type Props = {
-    text: string
+    text: string;
+    city: string;
 }
 
 export default function Button(props: Props) {
@@ -14,7 +15,8 @@ export default function Button(props: Props) {
         if (props.text == "Saiba mais") {
             setLido("Lido")
         }
-       
+         
+        Alert.alert(`Você clicou no Post  "${props.city}"`);
     }
 
     return (

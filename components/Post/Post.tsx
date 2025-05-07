@@ -24,7 +24,7 @@ export default function Post(props: Props) {
             />
             <Text style={styles.textPost}> {props.descricao}
             </Text>
-            <Button text={props.textButton}/>
+            <Button text={props.textButton} city={props.titulo}/>
 
         </View>
 

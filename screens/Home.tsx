@@ -26,6 +26,7 @@ export default function App() {
                 descricao="O Rio de Janeiro continua lindo"
                 imagem={Rj}
                 textButton= "Saiba mais"
+                
             />
 
 
@@ -33,6 +34,7 @@ export default function App() {
                 descricao="Não existe amor em Sp"
                 imagem={Sp}
                 textButton= "Saiba mais"
+                
             />
 
 
