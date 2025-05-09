@@ -6,7 +6,8 @@ type Props = {
     titulo: string,
     descricao: string,
     imagem: object,
-    textButton: string
+    textButton: string,
+    backgroundButton: string;
 }
 
 
@@ -24,7 +25,7 @@ export default function Post(props: Props) {
             />
             <Text style={styles.textPost}> {props.descricao}
             </Text>
-            <Button text={props.textButton} city={props.titulo}/>
+            <Button text={props.textButton} city={props.titulo}  backgroundButton={props.backgroundButton}/>
 
         </View>
 

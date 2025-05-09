@@ -6,10 +6,12 @@ import { StyleSheet, Text, TouchableOpacity, Alert } from 'react-native';
 type Props = {
     text: string;
     city: string;
+    backgroundButton: string;
 }
 
 export default function Button(props: Props) {
     const [button, setLido] = useState(props.text);
+    
 
     function buttonRead() {
         if (props.text == "Saiba mais") {
@@ -20,7 +22,7 @@ export default function Button(props: Props) {
     }
 
     return (
-        <TouchableOpacity onPress={buttonRead} style={styles.button} >
+        <TouchableOpacity onPress={buttonRead} style= {[styles.button, {backgroundColor:props.backgroundButton}]}>
             <Text style={styles.buttonText}>{button}</Text>
         </TouchableOpacity >
     );
@@ -30,7 +32,7 @@ const styles = StyleSheet.create({
     button: {
         padding: 6,
         width: 120,
-        backgroundColor: "#9c0101",
+       /*  backgroundColor: "#9c0101", */
         borderRadius: 8,
         alignSelf: 'center',
         margin: 12
